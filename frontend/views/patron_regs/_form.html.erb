@@ -1,0 +1,43 @@
+<%= render_aspace_partial :partial => "shared/form_messages", :locals => {:object => @patron_reg, :form => form} %>
+
+<% define_template("patron_reg", jsonmodel_definition(:patron_reg)) do |form| %>
+  <section id="basic_information">
+    <h3>
+      <%= I18n.t "patron_reg._frontend.section.basic_information" %>
+      <%= link_to_help :topic => "patron_reg_basic_information" %>
+    </h3>
+    <fieldset>
+			<%= form.label_and_textfield "primary_name" %>
+			<%= form.label_and_textfield "title" %>
+			<%= form.label_and_textfield "prefix" %>
+			<%= form.label_and_textfield "rest_of_name" %>
+			<%= form.label_and_textfield "suffix" %>
+			<%= form.label_and_textfield "fuller_form" %>
+			<%= form.label_and_textfield "number" %>
+			<%= form.label_and_textfield "address" %>
+			<%= form.label_and_textfield "city" %>
+			<%= form.label_and_textfield "state" %>
+			<%= form.label_and_textfield "zip" %>
+			<%= form.label_and_textfield "country" %>
+			<%= form.label_and_select "int_ext", form.possible_options_for("int_ext", true) %>
+			<%= form.label_and_textfield "external_name" %>
+			<%= form.label_and_textarea "emails" %>
+			<%= form.label_and_select "status", form.possible_options_for("status", true) %>
+			<%= form.label_and_textarea "status_note" %>
+			<%= form.label_and_select "purpose", form.possible_options_for("purpose", true) %>
+			<%= form.label_and_textarea "purpose_note" %>
+			<%= form.label_and_textarea "research_topic" %>
+			<%= form.label_and_textarea "general_note" %>
+			<%= form.label_and_date "date_signed" %>
+    </fieldset>
+  </section>
+<% end %>
+
+<% form.emit_template("patron_reg") %>
+
+<%= render_aspace_partial :partial => "shared/subrecord_form", :locals => {:form => form, :name => "patron_callslips"} %>
+
+<div class="form-actions">            
+  <button type="submit" class="btn btn-primary"><%= I18n.t("patron_reg._frontend.action.save") %></button>
+  <%= link_to I18n.t("actions.cancel"), :back, :class => "btn btn-cancel btn-default" %>
+</div>

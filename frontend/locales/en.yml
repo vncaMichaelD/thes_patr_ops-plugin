@@ -1,0 +1,164 @@
+en:
+  thesa:
+    subject: Subject
+    term: Term
+    general_note: Note
+    preferred: Preferred format?
+    _singular: Thesaurus
+    _plural: Thesaurus
+    _frontend:
+      action:
+        save: Save Thesaurus
+        create: Create
+      section:
+        basic_information: Basic Information
+      messages:
+        created: Thesaurus Term Created
+        updated: Thesaurus Updated
+        deleted: Thesaurus Term deleted.
+
+  thesa_term:
+    term: Term
+    preferred: Preferred format?
+    _singular: Term
+    _plural: Terms
+    _frontend:
+      action:
+        add: Add Term
+        create: Create
+      messages:
+        updated: Thesaurus Term updated.
+        deleted: Thesaurus Term deleted.
+
+  patron_reg:
+    primary_name: Primary Part of Name
+    primary_name_tooltip: |
+        <p>The primary part of a name form (e.g. a last name or surname of a person).</p>
+        <p>Examples:</p>
+        <ul>
+        <li>Churchill <em>(for Churchill, Winston, Sir, 1874-1965 [person])</em></i>
+        <li>Black Foot <em>(for Black Foot, Chief, d. 1877 [person])</em></li>
+        <li>International Business Machines <em>(for International Business Machines. Microelectronics Division [corporate entity])</em></li>
+        </ul>
+    prefix: Prefix
+    prefix_tooltip: |
+        <p>Any term associated with a name that in normative use would precede the entire name.</p>
+        <p>Examples:</p>
+        <ul>
+        <li>Mrs.</li>
+        </ul>
+    title: Title
+    title_tooltip: |
+        <p>A title that is part of the name.</p>
+        <p>Examples:</p>
+        <ul>
+        <li>Sir <em>(for Churchill, Winston, Sir, 1874-1965)</em></li>
+        <li>Chief (for Black Foot, Chief, d. 1877)</li>
+        <li>Emperor of the East <em>(for John II Comnenus. Emperor of the East.)</em></li>
+        </ul>
+    rest_of_name: Rest of Name
+    rest_of_name_tooltip: |
+        <p>The first name element or forename and additional names, e.g, middle names, for the person named in the record.</p>
+        <p>Examples:</p>
+        <ul>
+        <li>Winston <em>(for Churchill, Winston, Sir, 1874-1965)</em></li>
+        <li>Humphrey <em>(for Ward, Humphrey, Mrs., 1851-1920)</em></li>
+        </ul>
+    suffix: Suffix
+    suffix_tooltip: |
+        <p>A term following a name that qualifies the name but is not a title.</p>
+        <p>Examples</p>
+        <ul>
+        <li>Jr.</li>
+        <li>fils</li>
+        </ul>
+    fuller_form: Fuller Form
+    fuller_form_tooltip: |
+        <p>The fuller form of first and middle names, when abbreviated.</p>
+        <p>Examples</p>
+        <ul>
+        <li>Hilda Doolittle <em>(for H.D., Hilda Doolittle, 1886-1961)</em></li>
+        </ul>
+    number: Number
+    number_tooltip: |
+        <p>A number, sometimes with a term, that qualifies the name. For personal names, often a roman numeral or a roman numeral and a subsequent part of a forename. For corporate names, the number of a part / section or meeting.</p>
+        <p>Examples:</p>
+        <ul>
+        <li>II Comnenus <em>(for John II Comnenus, Emperor of the East</em>/li>
+        <li>II <em>(for John Paul II)</em></li>
+        <li>97th, 2nd session <em>(for United States Congress, 97th, 2nd session)</em></li>
+        </ul>
+    address: Addrress
+    city: City
+    state: State
+    zip: Zip
+    country: Country
+    int_ext: Internal / External
+    external_name: Association Name
+    emails: Email
+    status: Status
+    purpose: Purpose
+    status_note: Status Note
+    purpose_note: Purpose Note
+    research_topic: Research Topic
+    general_note: Notes
+    date_signed: Date Signed
+    _singular: Patron Registration
+    _plural: Patron Registrations
+    _frontend:
+      action:
+        save: Save Patron Registration
+        create: Create
+      section:
+        basic_information: Basic Information
+      messages:
+        created: Patron Registration Created
+        updated: Patron Registration Updated
+        deleted: Patron Registration Deleted.
+
+  patron_callslip:
+    date_signed: Date Signed
+    type_of_mat: Type of Material
+    signed_by: Signed By
+    signed_by_name: Signed By Name
+    coll_title: Collection or Title
+    coll_author: Author
+    coll_location: Call #/Location/Item #
+    box_nums: Box Numbers
+    pulled_by: Pulled By
+    general_note: Notes
+    _singular: Call Slip
+    _plural: Call Slips
+    _frontend:
+      action:
+        add: Add Call Slip
+        create: Create
+      messages:
+        updated: Call Slip Updated.
+        deleted: Call Slip Deleted.
+
+  patron_stat:
+    form_of_contact: Form of Contact
+    type_of_patron: Type of Patron
+    int_ext: Internal / External
+    time_spent: Time Spent (mins)
+    from_where: Where From?
+    num_on_tour: Number on Tour or Briefing
+    patron_names: Patron Names
+    questions: Question Asked
+    answers_provided: Answer Summary / Resource Provided
+    general_note: Notes
+    staff_member: Staff Member
+    todays_date: Today's Date
+    _singular: Patron Stat
+    _plural: Patron Stats
+    _frontend:
+      action:
+        save: Save Patron Stat
+        create: Create
+      section:
+        basic_information: Basic Information
+      messages:
+        created: Patron Stat Created
+        updated: Patron Stat Updated
+        deleted: Patron Stat Deleted.

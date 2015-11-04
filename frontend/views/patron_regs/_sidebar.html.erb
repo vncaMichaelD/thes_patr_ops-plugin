@@ -1,0 +1,8 @@
+<%= render(:layout => '/shared/sidebar',
+           :locals => {
+             :record_type => 'patron_reg',
+             :record => @patron_reg
+           }) do |sidebar| %>
+
+	    <%= sidebar.render_for_view_and_edit(:subrecord_type => 'patron_callslip', :property => 'patron_callslips') %>
+<% end %>

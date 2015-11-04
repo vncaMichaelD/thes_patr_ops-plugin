@@ -1,0 +1,57 @@
+<%= setup_context(:object => @patron_reg, :title => @patron_reg.display_string) %>
+
+<div class="row">
+   <div class="col-md-3">
+      <%= render_aspace_partial :partial => "sidebar" %>
+   </div>
+   <div class="col-md-9">
+    <%= render_aspace_partial :partial => "patron_regs/toolbar" %>
+    <div class="record-pane">
+      <%= readonly_context :patron_reg, @patron_reg do |readonly| %>
+          <h2><%= @patron_reg.display_string %> <span class="label label-info label-default"><%= I18n.t("patron_reg._singular") %></span></h2>
+  
+          <%= render_aspace_partial :partial => "shared/flash_messages" %>
+
+          <% define_template "patron_reg", jsonmodel_definition(:patron_reg) do |form| %>
+          <section id="basic_information">
+            <h3><%= I18n.t "patron_reg._frontend.section.basic_information" %></h3>
+
+			<%= readonly.label_and_textfield "primary_name" %>
+			<%= readonly.label_and_textfield "title" %>
+			<%= readonly.label_and_textfield "prefix" %>
+			<%= readonly.label_and_textfield "rest_of_name" %>
+			<%= readonly.label_and_textfield "suffix" %>
+			<%= readonly.label_and_textfield "fuller_form" %>
+			<%= readonly.label_and_textfield "number" %>
+			<%= readonly.label_and_textfield "address" %>
+			<%= readonly.label_and_textfield "city" %>
+			<%= readonly.label_and_textfield "state" %>
+			<%= readonly.label_and_textfield "zip" %>
+			<%= readonly.label_and_textfield "country" %>
+			<%= readonly.label_and_select "int_ext", readonly.possible_options_for("int_ext", true) %>
+			<%= readonly.label_and_textfield "external_name" %>
+			<%= readonly.label_and_textarea "emails" %>
+			<%= readonly.label_and_select "status", readonly.possible_options_for("status", true) %>
+			<%= readonly.label_and_textarea "status_note" %>
+			<%= readonly.label_and_select "purpose", readonly.possible_options_for("purpose", true) %>
+			<%= readonly.label_and_textarea "purpose_note" %>
+			<%= readonly.label_and_textarea "research_topic" %>
+			<%= readonly.label_and_textarea "general_note" %>
+			<%= readonly.label_and_date "date_signed" %>
+			
+            <%= display_audit_info(@patron_reg) %>
+          </section>
+          <% end %>
+
+          <% readonly.emit_template("patron_reg") %>
+		  
+          <% if @patron_reg.patron_callslips.length > 0 %>
+            <%= render_aspace_partial :partial => "patron_callslips/show", :locals => { :patron_callslips => @patron_reg.patron_callslips, :section_id => "patron_reg_patron_callslips_", :context => readonly } %>
+          <% end %>
+
+         <%= show_plugins_for(@patron_reg, readonly) %>
+
+       <% end %>
+     </div>
+   </div>
+</div>

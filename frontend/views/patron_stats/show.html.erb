@@ -1,0 +1,43 @@
+<%= setup_context(:object => @patron_stat, :title => @patron_stat.display_string) %>
+
+<div class="row">
+   <div class="col-md-3">
+      <%= render_aspace_partial :partial => "sidebar" %>
+   </div>
+   <div class="col-md-9">
+    <%= render_aspace_partial :partial => "patron_stats/toolbar" %>
+    <div class="record-pane">
+      <%= readonly_context :patron_stat, @patron_stat do |readonly| %>
+          <h2><%= @patron_stat.display_string %> <span class="label label-info label-default"><%= I18n.t("patron_stat._singular") %></span></h2>
+  
+          <%= render_aspace_partial :partial => "shared/flash_messages" %>
+
+          <% define_template "patron_stat", jsonmodel_definition(:patron_stat) do |form| %>
+          <section id="basic_information">
+            <h3><%= I18n.t "patron_stat._frontend.section.basic_information" %></h3>
+
+			<%= readonly.label_and_select "form_of_contact", readonly.possible_options_for("form_of_contact", true) %>
+			<%= readonly.label_and_select "type_of_patron", readonly.possible_options_for("type_of_patron", true) %>
+			<%= readonly.label_and_select "int_ext", readonly.possible_options_for("int_ext", true) %>
+			<%= readonly.label_and_select "time_spent", readonly.possible_options_for("time_spent", true) %>
+			<%= readonly.label_and_textfield "from_where" %>
+			<%= readonly.label_and_textfield "num_on_tour" %>
+			<%= readonly.label_and_textarea "patron_names" %>
+			<%= readonly.label_and_textarea "questions" %>
+			<%= readonly.label_and_textarea "answers_provided" %>
+			<%= readonly.label_and_textarea "general_note" %>
+			<%= readonly.label_and_textfield "staff_member" %>
+			<%= readonly.label_and_date "todays_date" %>
+	  
+            <%= display_audit_info(@patron_stat) %>
+          </section>
+          <% end %>
+
+          <% readonly.emit_template("patron_stat") %>
+
+         <%= show_plugins_for(@patron_stat, readonly) %>
+
+       <% end %>
+     </div>
+   </div>
+</div>

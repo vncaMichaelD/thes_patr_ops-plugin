@@ -1,0 +1,20 @@
+<%= setup_context(:object => @patron_stat, :title => I18n.t("actions.defaults")) %>
+
+<%= form_for @patron_stat, :as => "patron_stat", :url => {:action => :update_defaults}, :html => {:class => 'form-horizontal aspace-record-form', :id => "patron_stat_form"} do |f| %>
+
+  <%= form_context :patron_stat, @patron_stat do |form| %>
+    <div class="row">
+      <div class="col-md-3">
+        <%= render_aspace_partial :partial => "sidebar" %>
+      </div>
+      <div class="col-md-9">
+        <%= render_aspace_partial :partial => "shared/toolbar_new_records" %>
+        <div class="record-pane">
+          <%= link_to_help :topic => "patron_stat" %>
+          <h2><%= I18n.t("patron_stat._singular") %> <%= I18n.t("actions.defaults") %> <span class="label label-info"><%= I18n.t("patron_stat._singular") %></span></h2>
+          <%= render_aspace_partial :partial => "patron_stats/form", :locals => {:form => form} %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+<% end %>

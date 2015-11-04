@@ -1,0 +1,52 @@
+en:
+  enumerations:
+    thesa_subject:
+      placename: Place Name
+      militaryterm: Military Term
+      militarytitle: Military Title
+      odp: ODP
+
+    patron_contact:
+      email: Email
+      phone: Phone
+      walkin: Walk-In
+      tour: Tour
+      other: Other
+      letter: Letter
+      briefing: Briefing
+
+    patron_type:
+      researcher: Researcher
+      veteran: Veteran
+      other: Other
+      general_public: General Public
+      media: Media
+      donor: Donor
+      oral_history: Oral History
+      students_class: Students/Class
+
+    patron_int_ext:
+      unknown: Unknown
+      ttu: TTU
+      other: Other
+
+    patron_signed_by:
+      not: Not Signed
+      patron: Patron
+      staff: Staff
+
+    patron_status:
+      undergrad: Undergraduate
+      gradstudent: Graduate Student
+      facultystaff: Faculty/Staff
+      techalum: Tech Alum
+      genealogist: Genealogist
+      generalresearch: General Researcher
+      other: Other
+
+    patron_purpose:
+      class: Class/Project
+      thesis: Thesis/Dissertation
+      genealogy: Genealogy
+      publication: Publication
+      other: Other

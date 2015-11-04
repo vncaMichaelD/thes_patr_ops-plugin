@@ -1,0 +1,15 @@
+<% define_template "patron_callslip", jsonmodel_definition(:patron_callslip) do |form| %>
+  <div class="subrecord-form-fields">
+      <%= form.label_and_date "date_signed" %>
+	  <%= form.label_and_select "type_of_mat", form.possible_options_for("type_of_mat", true) %>
+      <%= form.label_and_select "signed_by", form.possible_options_for("signed_by", true) %>
+	  <%= form.label_and_textfield "signed_by_name" %>
+	  <%= form.label_and_textfield "coll_title" %>
+	  <%= form.label_and_textfield "coll_author" %>
+	  <%= form.label_and_textfield "coll_location" %>
+	  <%= form.label_and_textarea "box_nums" %>
+	  <%= form.label_and_textfield "pulled_by" %>
+	  <%= form.label_and_textarea "general_note" %>
+
+  </div>
+<% end %>

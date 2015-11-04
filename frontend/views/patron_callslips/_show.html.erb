@@ -1,0 +1,26 @@
+<%
+   section_id = "patron_callslips" if section_id.blank?
+%>
+
+<section id="<%= section_id %>">
+  <h3><%= I18n.t("patron_callslip._plural") %></h3>
+  <div class="accordion details" id="<%= section_id %>_accordion">
+    <% patron_callslips.each_with_index do | patron_callslip, index | %>
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <div class="row accordion-toggle collapsed" data-toggle="collapse" data-parent="#<%= section_id %>_accordion" href="#<%= section_id %>_patron_callslip_<%= index %>">
+            <div class="col-md-3">
+              <%= patron_callslip['date_signed'] %>
+            </div>
+			<div class="col-md-6">
+              <%= I18n.t('enumerations.digital_object_digital_object_type.'+patron_callslip['type_of_mat'], :default => patron_callslip['type_of_mat']) %>
+            </div>
+          </div>
+        </div>
+        <div id="<%= section_id %>_patron_callslip_<%= index %>" class="accordion-body collapse">
+          <%= read_only_view(patron_callslip) %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</section>

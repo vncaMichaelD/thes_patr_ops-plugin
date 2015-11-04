@@ -1,0 +1,21 @@
+<%= setup_context(:object => @patron_reg, :title => @patron_reg.display_string) %>
+
+<%= form_for @patron_reg, :as => "patron_reg", :url => {:action => :update}, :html => {:class => 'form-horizontal aspace-record-form', :id => "patron_reg_form"}.merge(update_monitor_params(@patron_reg)) do |f| %>
+  <%= form_context :patron_reg, @patron_reg do |form| %>
+    <div class="row">
+      <div class="col-md-3">
+        <%= render_aspace_partial :partial => "sidebar" %>
+      </div>
+
+      <div class="col-md-9">
+        <%= render_aspace_partial :partial => "patron_regs/toolbar" %>
+        <div class="record-pane">
+          <%= link_to_help :topic => "patron_reg" %>
+          <h2><span class="label label-info"><%= I18n.t("patron_reg._singular") %></span></h2>
+          <input type="hidden" name="_method" value="put" />
+          <%= render_aspace_partial :partial => "patron_regs/form", :locals => {:form => form} %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+<% end %>

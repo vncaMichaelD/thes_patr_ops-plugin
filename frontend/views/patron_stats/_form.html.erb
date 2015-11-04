@@ -1,0 +1,32 @@
+<%= render_aspace_partial :partial => "shared/form_messages", :locals => {:object => @patron_stat, :form => form} %>
+
+<% define_template("patron_stat", jsonmodel_definition(:patron_stat)) do |form| %>
+  <section id="basic_information">
+    <h3>
+      <%= I18n.t "patron_stat._frontend.section.basic_information" %>
+      <%= link_to_help :topic => "patron_stat_basic_information" %>
+    </h3>
+    <fieldset>
+	   <%= form.label_and_select "form_of_contact", form.possible_options_for("form_of_contact", true) %>
+       <%= form.label_and_select "type_of_patron", form.possible_options_for("type_of_patron", true) %>
+       <%= form.label_and_select "int_ext", form.possible_options_for("int_ext", true) %>
+       <%= form.label_and_select "time_spent", form.possible_options_for("time_spent", true) %>
+       <%= form.label_and_textfield "from_where" %>
+       <%= form.label_and_textfield "num_on_tour" %>
+       <%= form.label_and_textarea "patron_names" %>
+       <%= form.label_and_textarea "questions" %>
+       <%= form.label_and_textarea "answers_provided" %>
+       <%= form.label_and_textarea "general_note" %>
+       <%= form.label_and_textfield "staff_member" %>
+       <%= form.label_and_date "todays_date" %>
+    </fieldset>
+  </section>
+<% end %>
+
+<% form.emit_template("patron_stat") %>
+
+
+<div class="form-actions">            
+  <button type="submit" class="btn btn-primary"><%= I18n.t("patron_stat._frontend.action.save") %></button>
+  <%= link_to I18n.t("actions.cancel"), :back, :class => "btn btn-cancel btn-default" %>
+</div>
