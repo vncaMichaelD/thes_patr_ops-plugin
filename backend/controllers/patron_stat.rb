@@ -1,7 +1,7 @@
 class ArchivesSpaceService < Sinatra::Base
 
   Endpoint.post('/repositories/:repo_id/patron_stats/:id')
-    .description("Update a Patron Stat term")
+    .description("Update a Patron Stat")
     .params(["id", :id],
             ["patron_stat", JSONModel(:patron_stat), "The updated record", :body => true],
             ["repo_id", :repo_id])
@@ -13,7 +13,7 @@ class ArchivesSpaceService < Sinatra::Base
 
 
   Endpoint.post('/repositories/:repo_id/patron_stats')
-    .description("Create a Patron Stat term")
+    .description("Create a Patron Stat")
     .params(["patron_stat", JSONModel(:patron_stat), "The record to create", :body => true],
             ["repo_id", :repo_id])
     .permissions([:update_resource_record])
@@ -24,7 +24,7 @@ class ArchivesSpaceService < Sinatra::Base
 
 
   Endpoint.get('/repositories/:repo_id/patron_stats')
-    .description("Get a list of Patron Stat terms for a Repository")
+    .description("Get a list of Patron Stat for a Repository")
     .params(["repo_id", :repo_id])
     .paginated(true)
     .permissions([:view_repository])
@@ -35,7 +35,7 @@ class ArchivesSpaceService < Sinatra::Base
 
 
   Endpoint.get('/repositories/:repo_id/patron_stats/:id')
-    .description("Get a Patron Stat term by ID")
+    .description("Get a Patron Stat by ID")
     .params(["id", :id],
             ["repo_id", :repo_id],
             ["resolve", :resolve])
@@ -49,7 +49,7 @@ class ArchivesSpaceService < Sinatra::Base
 
 
   Endpoint.delete('/repositories/:repo_id/patron_stats/:id')
-    .description("Delete a Patron Stat term")
+    .description("Delete a Patron Stat")
     .params(["id", :id],
             ["repo_id", :repo_id])
     .permissions([:delete_archival_record])
